@@ -9,7 +9,9 @@
         alt="icon"
         class="city__img"
       >
-      <p class="city__description">{{activeCity.weather[0].description}}</p>
+      <p class="city__text">{{activeCity.weather[0].description}}</p>
+      <p class="city__text">{{Math.round(activeCity.main.temp)}}&deg;C</p>
+
       <p class="city__speed">wind speed: {{activeCity.wind.speed}} m/s</p>
       <p>Direction of the wind: {{sectors[(activeCity.wind.deg / 22.5).toFixed(0)]}}</p>
 
@@ -59,7 +61,7 @@ export default {
   @media(max-width: 768px) {
     width: 100%;
   }
-	&__description {
+	&__text {
     margin-bottom: 20px;
 	}
 	&__speed {
